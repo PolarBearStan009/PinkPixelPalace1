@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: local('Comic Sans MS');
+}
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --border: 330 81% 60%;
+  --input: 330 81% 60%;
+  --primary: 330 81% 60%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 199 89% 48%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 271 76% 53%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 330 81% 60%;
+  --radius: 0.5rem;
+  
+  /* Y2K custom colors */
+  --hot-pink: 330 81% 60%;
+  --cyber-blue: 199 89% 48%;
+  --neon-green: 140 75% 60%;
+  --lavender: 271 76% 53%;
+  --bright-yellow: 60 90% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-black text-white relative;
+    cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 3.5L17.5 12L9 20.5' stroke='%23FF66B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 3.5L17.5 12L9 20.5' stroke='%23FFFFFF' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 
+      12 12, 
+      auto;
+    overflow-x: hidden;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--hot-pink));
+    border: 2px dotted hsl(var(--cyber-blue));
+  }
+}
+
+@layer components {
+  .font-pixel {
+    font-family: "Press Start 2P", cursive;
+  }
+  
+  .font-pixel-body {
+    font-family: "VT323", monospace;
+  }
+  
+  .font-cute {
+    font-family: "Pacifico", cursive;
+  }
+  
+  .font-comic {
+    font-family: "Comic Sans MS", cursive;
+  }
+  
+  .animated-bg {
+    background: linear-gradient(45deg, hsl(var(--hot-pink)), hsl(var(--cyber-blue)), hsl(var(--neon-green)), hsl(var(--lavender)));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  .glitter-border {
+    position: relative;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    animation: rainbow-border 3s linear infinite;
+  }
+  
+  .y2k-table {
+    border-collapse: separate;
+    border-spacing: 4px;
+  }
+  
+  .y2k-table td {
+    border: 3px solid hsl(var(--hot-pink));
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .sparkle-trail {
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+}
+
+@layer utilities {
+  .text-hot-pink {
+    color: hsl(var(--hot-pink));
+  }
+  
+  .text-cyber-blue {
+    color: hsl(var(--cyber-blue));
+  }
+  
+  .text-neon-green {
+    color: hsl(var(--neon-green));
+  }
+  
+  .text-lavender {
+    color: hsl(var(--lavender));
+  }
+  
+  .text-bright-yellow {
+    color: hsl(var(--bright-yellow));
+  }
+  
+  .bg-hot-pink {
+    background-color: hsl(var(--hot-pink));
+  }
+  
+  .bg-cyber-blue {
+    background-color: hsl(var(--cyber-blue));
+  }
+  
+  .bg-neon-green {
+    background-color: hsl(var(--neon-green));
+  }
+  
+  .bg-lavender {
+    background-color: hsl(var(--lavender));
+  }
+  
+  .bg-bright-yellow {
+    background-color: hsl(var(--bright-yellow));
+  }
+  
+  .border-hot-pink {
+    border-color: hsl(var(--hot-pink));
+  }
+  
+  .border-cyber-blue {
+    border-color: hsl(var(--cyber-blue));
+  }
+  
+  .border-neon-green {
+    border-color: hsl(var(--neon-green));
+  }
+  
+  .border-lavender {
+    border-color: hsl(var(--lavender));
+  }
+  
+  .border-bright-yellow {
+    border-color: hsl(var(--bright-yellow));
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0; }
+}
+
+@keyframes rainbow {
+  0% { color: hsl(var(--hot-pink)); }
+  20% { color: hsl(var(--cyber-blue)); }
+  40% { color: hsl(var(--neon-green)); }
+  60% { color: hsl(var(--lavender)); }
+  80% { color: hsl(var(--bright-yellow)); }
+  100% { color: hsl(var(--hot-pink)); }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: hsl(var(--hot-pink)); }
+  20% { border-color: hsl(var(--cyber-blue)); }
+  40% { border-color: hsl(var(--neon-green)); }
+  60% { border-color: hsl(var(--lavender)); }
+  80% { border-color: hsl(var(--bright-yellow)); }
+  100% { border-color: hsl(var(--hot-pink)); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 8s linear infinite;
+}
+
+.animate-blink {
+  animation: blink 1s linear infinite;
+}
+
+.animate-rainbow {
+  animation: rainbow 3s linear infinite;
+}
