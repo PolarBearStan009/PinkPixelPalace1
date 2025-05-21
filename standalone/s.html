@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>✿✿✿ My Super Cute Portfolio ✿✿✿</title>
+    <meta name="description" content="A super kawaii Y2K inspired portfolio showcasing cute projects with glitter, pixel art, and nostalgic web design!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="✿✿✿ My Super Cute Portfolio ✿✿✿">
+    <meta property="og:description" content="Check out my super kawaii Y2K inspired portfolio with cute projects, glitter, and pixel art!">
+    <meta property="og:type" content="website">
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @font-face {
+        font-family: 'Comic Sans MS';
+        src: local('Comic Sans MS');
+      }
+
+      :root {
+        --background: 0 0% 0%;
+        --foreground: 0 0% 100%;
+        --muted: 60 4.8% 95.9%;
+        --muted-foreground: 25 5.3% 44.7%;
+        --popover: 0 0% 0%;
+        --popover-foreground: 0 0% 100%;
+        --card: 0 0% 0%;
+        --card-foreground: 0 0% 100%;
+        --border: 330 81% 60%;
+        --input: 330 81% 60%;
+        --primary: 330 81% 60%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 199 89% 48%;
+        --secondary-foreground: 222 47% 11%;
+        --accent: 271 76% 53%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 60 9.1% 97.8%;
+        --ring: 330 81% 60%;
+        --radius: 0.5rem;
+        
+        /* Y2K custom colors */
+        --hot-pink: hsl(330, 81%, 60%);
+        --cyber-blue: hsl(199, 89%, 48%);
+        --neon-green: hsl(140, 75%, 60%);
+        --lavender: hsl(271, 76%, 53%);
+        --bright-yellow: hsl(60, 90%, 60%);
+      }
+
+      * {
+        border-color: var(--hot-pink);
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: black;
+        color: white;
+        position: relative;
+        cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 3.5L17.5 12L9 20.5' stroke='%23FF66B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 3.5L17.5 12L9 20.5' stroke='%23FFFFFF' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 
+            12 12, 
+            auto;
+        overflow-x: hidden;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 15px;
+        height: 15px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background-color: black;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--hot-pink);
+        border: 2px dotted var(--cyber-blue);
+      }
+
+      .font-pixel {
+        font-family: "Press Start 2P", cursive;
+      }
+      
+      .font-pixel-body {
+        font-family: "VT323", monospace;
+      }
+      
+      .font-cute {
+        font-family: "Pacifico", cursive;
+      }
+      
+      .font-comic {
+        font-family: "Comic Sans MS", cursive;
+      }
+      
+      .animated-bg {
+        background: linear-gradient(45deg, var(--hot-pink), var(--cyber-blue), var(--neon-green), var(--lavender));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      
+      .glitter-border {
+        position: relative;
+        border: 4px solid transparent;
+        background-clip: padding-box;
+        animation: rainbow-border 3s linear infinite;
+      }
+      
+      .y2k-table {
+        border-collapse: separate;
+        border-spacing: 4px;
+        width: 90%;
+        margin: 0 auto;
+      }
+      
+      .y2k-table td {
+        border: 3px solid var(--hot-pink);
+        padding: 8px;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+      
+      .sparkle-trail {
+        pointer-events: none;
+        position: fixed;
+        z-index: 9999;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        transition: all 0.2s ease;
+      }
+
+      .text-hot-pink {
+        color: var(--hot-pink);
+      }
+      
+      .text-cyber-blue {
+        color: var(--cyber-blue);
+      }
+      
+      .text-neon-green {
+        color: var(--neon-green);
+      }
+      
+      .text-lavender {
+        color: var(--lavender);
+      }
+      
+      .text-bright-yellow {
+        color: var(--bright-yellow);
+      }
+      
+      .bg-hot-pink {
+        background-color: var(--hot-pink);
+      }
+      
+      .bg-cyber-blue {
+        background-color: var(--cyber-blue);
+      }
+      
+      .bg-neon-green {
+        background-color: var(--neon-green);
+      }
+      
+      .bg-lavender {
+        background-color: var(--lavender);
+      }
+      
+      .bg-bright-yellow {
+        background-color: var(--bright-yellow);
+      }
+      
+      .border-hot-pink {
+        border-color: var(--hot-pink);
+      }
+      
+      .border-cyber-blue {
+        border-color: var(--cyber-blue);
+      }
+      
+      .border-neon-green {
+        border-color: var(--neon-green);
+      }
+      
+      .border-lavender {
+        border-color: var(--lavender);
+      }
+      
+      .border-bright-yellow {
+        border-color: var(--bright-yellow);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .md\\:flex-row {
+        flex-direction: row;
+      }
+
+      .items-center {
+        align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .gap-8 {
+        gap: 2rem;
+      }
+
+      .gap-3 {
+        gap: 0.75rem;
+      }
+
+      .gap-2 {
+        gap: 0.5rem;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .md\\:w-1\\/2 {
+        width: 50%;
+      }
+
+      .w-1\\/3 {
+        width: 33.333333%;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+      .md\\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1;
+      }
+
+      .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .text-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .my-4 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .mb-12 {
+        margin-bottom: 3rem;
+      }
+
+      .mb-8 {
+        margin-bottom: 2rem;
+      }
+
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+
+      .mb-3 {
+        margin-bottom: 0.75rem;
+      }
+
+      .mb-2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .mt-8 {
+        margin-top: 2rem;
+      }
+
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+
+      .mt-4 {
+        margin-top: 1rem;
+      }
+
+      .mt-3 {
+        margin-top: 0.75rem;
+      }
+
+      .mt-2 {
+        margin-top: 0.5rem;
+      }
+
+      .mt-1 {
+        margin-top: 0.25rem;
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .mr-3 {
+        margin-right: 0.75rem;
+      }
+
+      .ml-3 {
+        margin-left: 0.75rem;
+      }
+
+      .p-6 {
+        padding: 1.5rem;
+      }
+
+      .p-4 {
+        padding: 1rem;
+      }
+
+      .p-3 {
+        padding: 0.75rem;
+      }
+
+      .p-2 {
+        padding: 0.5rem;
+      }
+
+      .p-1 {
+        padding: 0.25rem;
+      }
+
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .px-3 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
+
+      .px-2 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+
+      .py-2 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .py-1 {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      }
+
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+
+      .rounded-full {
+        border-radius: 9999px;
+      }
+
+      .border-2 {
+        border-width: 2px;
+      }
+
+      .border-4 {
+        border-width: 4px;
+      }
+
+      .border-y-4 {
+        border-top-width: 4px;
+        border-bottom-width: 4px;
+      }
+
+      .float-right {
+        float: right;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .inline-block {
+        display: inline-block;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .top-2 {
+        top: 0.5rem;
+      }
+
+      .left-5 {
+        left: 1.25rem;
+      }
+
+      .right-5 {
+        right: 1.25rem;
+      }
+
+      .-top-6 {
+        top: -1.5rem;
+      }
+
+      .-right-6 {
+        right: -1.5rem;
+      }
+
+      .-bottom-4 {
+        bottom: -1rem;
+      }
+
+      .-left-6 {
+        left: -1.5rem;
+      }
+
+      .min-h-screen {
+        min-height: 100vh;
+      }
+
+      .h-full {
+        height: 100%;
+      }
+
+      .h-32 {
+        height: 8rem;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .overflow-hidden {
+        overflow: hidden;
+      }
+
+      .list-disc {
+        list-style-type: disc;
+      }
+
+      .list-inside {
+        list-style-position: inside;
+      }
+
+      .animate-rotate {
+        animation: rotate 8s linear infinite;
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      .animate-sparkle {
+        animation: sparkle 1.5s linear infinite;
+      }
+
+      .animate-blink {
+        animation: blink 1s linear infinite;
+      }
+
+      .animate-rainbow {
+        animation: rainbow 3s linear infinite;
+      }
+
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .md\\:flex-row {
+          flex-direction: column;
+        }
+
+        .md\\:w-1\\/2 {
+          width: 100%;
+        }
+      }
+
+      /* Animation keyframes */
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      @keyframes sparkle {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes blink {
+        0%, 49%, 100% { opacity: 1; }
+        50%, 99% { opacity: 0; }
+      }
+
+      @keyframes rainbow {
+        0% { color: var(--hot-pink); }
+        20% { color: var(--cyber-blue); }
+        40% { color: var(--neon-green); }
+        60% { color: var(--lavender); }
+        80% { color: var(--bright-yellow); }
+        100% { color: var(--hot-pink); }
+      }
+
+      @keyframes rainbow-border {
+        0% { border-color: var(--hot-pink); }
+        20% { border-color: var(--cyber-blue); }
+        40% { border-color: var(--neon-green); }
+        60% { border-color: var(--lavender); }
+        80% { border-color: var(--bright-yellow); }
+        100% { border-color: var(--hot-pink); }
+      }
+
+      @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      /* Marquee styles */
+      .marquee {
+        overflow: hidden;
+        position: relative;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .marquee-content {
+        white-space: nowrap;
+        position: absolute;
+        animation: marquee 20s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sparkleContainer" class="fixed inset-0 pointer-events-none z-50"></div>
+
+    <div class="min-h-screen">
+      <!-- Header -->
+      <header class="text-center py-4 relative overflow-hidden">
+        <svg 
+          class="absolute top-2 left-5 animate-rotate" 
+          width="80" 
+          height="80" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
+            fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5"/>
+        </svg>
+        
+        <svg 
+          class="absolute top-2 right-5 animate-float" 
+          width="80" 
+          height="80" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" 
+            fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5" transform="rotate(45 12 12)"/>
+          <circle cx="12" cy="12" r="5" fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5"/>
+        </svg>
+        
+        <h1 class="font-pixel text-hot-pink text-4xl md:text-6xl mb-2 animate-rainbow">✿ My Kawaii Portfolio ✿</h1>
+        
+        <div class="marquee bg-black border-y-4 border-hot-pink my-4">
+          <div class="marquee-content font-pixel-body text-xl text-cyber-blue">
+            ★☆★ Welcome to my super cute portfolio website! Check out my amazing projects! ★☆★ Under construction! More cuteness coming soon! ★☆★
+          </div>
+        </div>
+      </header>
+
+      <!-- Navigation -->
+      <div class="container mx-auto px-4 mb-8">
+        <table class="nav-table y2k-table">
+          <tbody>
+            <tr>
+              <td class="text-center w-1/5 glitter-border">
+                <svg
+                  class="mx-auto mb-2"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z" fill="#33CCFF" stroke="#FFFFFF" stroke-width="0.5"/>
+                </svg>
+                <a href="#home" class="font-pixel-body text-xl text-neon-green hover:text-bright-yellow">Home</a>
+              </td>
+              
+              <td class="text-center w-1/5 glitter-border">
+                <svg
+                  class="mx-auto mb-2"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5"/>
+                </svg>
+                <a href="#about" class="font-pixel-body text-xl text-neon-green hover:text-bright-yellow">About Me</a>
+              </td>
+              
+              <td class="text-center w-1/5 glitter-border">
+                <svg
+                  class="mx-auto mb-2"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z" fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5"/>
+                </svg>
+                <a href="#projects" class="font-pixel-body text-xl text-neon-green hover:text-bright-yellow">Projects</a>
+              </td>
+              
+              <td class="text-center w-1/5 glitter-border">
+                <svg
+                  class="mx-auto mb-2"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#CC99FF" stroke="#FFFFFF" stroke-width="0.5"/>
+                </svg>
+                <a href="#contact" class="font-pixel-body text-xl text-neon-green hover:text-bright-yellow">Contact</a>
+              </td>
+              
+              <td class="text-center w-1/5 glitter-border">
+                <svg
+                  class="mx-auto mb-2"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFFF66" stroke="#FFFFFF" stroke-width="0.5"/>
+                </svg>
+                <a href="#" id="secret-link" class="font-pixel-body text-xl text-neon-green hover:text-bright-yellow">Secret!</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Home Section -->
+      <section id="home" class="container mx-auto px-4 mb-12">
+        <div class="animated-bg p-1 rounded-lg">
+          <div class="bg-black p-6 rounded-lg">
+            <svg 
+              class="float-right animate-float" 
+              width="120" 
+              height="120" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="10" fill="#FF66B2" fill-opacity="0.7" stroke="#FFFFFF" stroke-width="0.5"/>
+              <path d="M12 7L14.5 12L12 17L9.5 12L12 7Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+            </svg>
+            
+            <h2 class="font-cute text-3xl text-lavender mb-4">✧･ﾟ Welcome to my space! ･ﾟ✧</h2>
+            
+            <p class="font-comic text-lg mb-4">
+              Hiii! I'm so excited you found my cute little corner of the internet! This is where I share all my super kawaii projects and stuff I've been working on! 
+            </p>
+            
+            <p class="font-comic text-lg mb-4">
+              I love creating things that are as cute as they are functional! Explore around and don't forget to check out the secret areas... ଘ(੭ˊᵕˋ)੭✧
+            </p>
+            
+            <div class="text-center mt-8">
+              <span class="inline-block bg-hot-pink px-4 py-2 rounded-full animate-pulse font-pixel-body text-lg text-black">✨ Scroll down for more cuteness! ✨</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- About Section -->
+      <section id="about" class="container mx-auto px-4 mb-12">
+        <table class="y2k-table">
+          <tbody>
+            <tr>
+              <td colspan="3" class="text-center">
+                <h2 class="font-cute text-3xl text-cyber-blue mb-4">✧･ﾟ About Meee! ･ﾟ✧</h2>
+              </td>
+            </tr>
+            <tr>
+              <td class="w-1/3">
+                <div class="border-4 border-neon-green p-2 text-center">
+                  <div class="bg-lavender p-1">
+                    <div class="bg-black p-4">
+                      <svg 
+                        class="mx-auto" 
+                        width="200" 
+                        height="200" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="8" r="5" fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5"/>
+                        <path d="M20 19v-1c0-4.4-3.6-8-8-8s-8 3.6-8 8v1h16z" fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="font-pixel-body text-hot-pink mt-2">me irl ^_^</p>
+                </div>
+              </td>
+              <td class="w-1/3">
+                <p class="font-comic text-lg mb-2">
+                  Heyyyy! I'm a super creative person who loves all things cute and Y2K! I'm passionate about web design, digital art, and making things that make people smile! 
+                </p>
+                <p class="font-comic text-lg">
+                  When I'm not coding, you can find me collecting pixel art, playing with my virtual pets, or hunting for vintage tech!
+                </p>
+              </td>
+              <td class="w-1/3">
+                <div class="bg-black p-3 border-2 border-hot-pink rounded-lg">
+                  <h3 class="font-pixel-body text-xl text-bright-yellow mb-2">✧ My Skills ✧</h3>
+                  <ul class="list-disc list-inside font-comic">
+                    <li class="text-cyber-blue">Web Development</li>
+                    <li class="text-neon-green">Reversing</li>
+                    <li class="text-lavender">PsychedLove</li>
+                    <li class="text-hot-pink">Game Dev</li>
+                    <li class="text-bright-yellow">Animation</li>
+                  </ul>
+                </div>
+                
+                <svg 
+                  class="mt-4 mx-auto animate-float" 
+                  width="80" 
+                  height="80" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" 
+                    fill="#FFFF66" stroke="#FFFFFF" stroke-width="0.5" transform="rotate(45 12 12)"/>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Projects Section -->
+      <section id="projects" class="container mx-auto px-4 mb-12">
+        <div class="text-center mb-6">
+          <h2 class="font-cute text-3xl text-hot-pink inline-block relative">
+            ✧･ﾟ My Projects ･ﾟ✧
+            <span class="absolute -top-6 -right-6 text-2xl animate-sparkle">✨</span>
+            <span class="absolute -bottom-4 -left-6 text-2xl animate-sparkle">✨</span>
+          </h2>
+        </div>
+        
+        <table class="project-table y2k-table">
+          <tbody>
+            <tr>
+              <td class="project-cell w-1/2">
+                <div class="glitter-border p-3">
+                  <h3 class="font-pixel text-lg text-cyber-blue mb-2">✧ Kawaii Weather App ✧</h3>
+                  
+                  <div 
+                    class="mx-auto mb-2 border-2 border-neon-green bg-cover bg-center h-[200px]" 
+                    style="background-image: url('https://images.unsplash.com/photo-1600456899121-68eda5705257?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80');"
+                  ></div>
+                  
+                  <p class="font-comic text-sm mb-3">
+                    A super cute weather application that shows forecasts with adorable pixel art characters that change based on the weather conditions!
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-hot-pink text-black px-2 py-1 text-xs rounded-full font-pixel-body">HTML</span>
+                    <span class="bg-cyber-blue text-black px-2 py-1 text-xs rounded-full font-pixel-body">CSS</span>
+                    <span class="bg-neon-green text-black px-2 py-1 text-xs rounded-full font-pixel-body">JavaScript</span>
+                  </div>
+                  
+                  <div class="text-center">
+                    <a 
+                      href="#" 
+                      class="inline-block bg-lavender text-black px-3 py-1 rounded-full font-pixel-body hover:bg-bright-yellow"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              </td>
+              <td class="project-cell w-1/2">
+                <div class="glitter-border p-3">
+                  <h3 class="font-pixel text-lg text-cyber-blue mb-2">✧ Pixel Pet Simulator ✧</h3>
+                  
+                  <div 
+                    class="mx-auto mb-2 border-2 border-neon-green bg-cover bg-center h-[200px]" 
+                    style="background-image: url('https://images.unsplash.com/photo-1615751072497-5f5169febe17?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80');"
+                  ></div>
+                  
+                  <p class="font-comic text-sm mb-3">
+                    A virtual pet simulator where you can adopt adorable pixel creatures! Feed them, play with them, and watch them grow!
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-hot-pink text-black px-2 py-1 text-xs rounded-full font-pixel-body">HTML5</span>
+                    <span class="bg-cyber-blue text-black px-2 py-1 text-xs rounded-full font-pixel-body">CSS3</span>
+                    <span class="bg-neon-green text-black px-2 py-1 text-xs rounded-full font-pixel-body">React</span>
+                  </div>
+                  
+                  <div class="text-center">
+                    <a 
+                      href="#" 
+                      class="inline-block bg-lavender text-black px-3 py-1 rounded-full font-pixel-body hover:bg-bright-yellow"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="project-cell w-1/2">
+                <div class="glitter-border p-3">
+                  <h3 class="font-pixel text-lg text-cyber-blue mb-2">✧ Y2K Music Player ✧</h3>
+                  
+                  <div 
+                    class="mx-auto mb-2 border-2 border-neon-green bg-cover bg-center h-[200px]" 
+                    style="background-image: url('https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80');"
+                  ></div>
+                  
+                  <p class="font-comic text-sm mb-3">
+                    A retro-style music player with visualizations and skins inspired by classic media players from the early 2000s!
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-hot-pink text-black px-2 py-1 text-xs rounded-full font-pixel-body">JavaScript</span>
+                    <span class="bg-cyber-blue text-black px-2 py-1 text-xs rounded-full font-pixel-body">Web Audio API</span>
+                    <span class="bg-neon-green text-black px-2 py-1 text-xs rounded-full font-pixel-body">Canvas</span>
+                  </div>
+                  
+                  <div class="text-center">
+                    <a 
+                      href="#" 
+                      class="inline-block bg-lavender text-black px-3 py-1 rounded-full font-pixel-body hover:bg-bright-yellow"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              </td>
+              <td class="project-cell w-1/2">
+                <div class="glitter-border p-3">
+                  <h3 class="font-pixel text-lg text-cyber-blue mb-2">✧ Digital Sticker Book ✧</h3>
+                  
+                  <div 
+                    class="mx-auto mb-2 border-2 border-neon-green bg-cover bg-center h-[200px]" 
+                    style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200&q=80');"
+                  ></div>
+                  
+                  <p class="font-comic text-sm mb-3">
+                    An interactive digital sticker collection app where you can collect, trade, and arrange cute digital stickers in your own virtual book!
+                  </p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="bg-hot-pink text-black px-2 py-1 text-xs rounded-full font-pixel-body">Vue.js</span>
+                    <span class="bg-cyber-blue text-black px-2 py-1 text-xs rounded-full font-pixel-body">Firebase</span>
+                    <span class="bg-neon-green text-black px-2 py-1 text-xs rounded-full font-pixel-body">Drag & Drop API</span>
+                  </div>
+                  
+                  <div class="text-center">
+                    <a 
+                      href="#" 
+                      class="inline-block bg-lavender text-black px-3 py-1 rounded-full font-pixel-body hover:bg-bright-yellow"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!-- Under construction section -->
+        <div class="mt-8 text-center">
+          <svg 
+            class="inline-block animate-float" 
+            width="80" 
+            height="80" 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" 
+              fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5"/>
+          </svg>
+          
+          <p class="font-pixel-body text-bright-yellow text-lg animate-blink inline-block ml-3">
+            More projects under construction! Check back soon! (◕‿◕✿)
+          </p>
+        </div>
+      </section>
+      
+      <!-- Contact Section -->
+      <section id="contact" class="container mx-auto px-4 mb-12">
+        <div class="animated-bg p-1 rounded-lg">
+          <div class="bg-black p-6 rounded-lg">
+            <h2 class="font-cute text-3xl text-lavender mb-4 text-center">✧･ﾟ Contact Me! ･ﾟ✧</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+              <div class="md:w-1/2">
+                <div class="glitter-border p-4">
+                  <h3 class="font-pixel-body text-xl text-hot-pink mb-3">✧ Send me a message! ✧</h3>
+                  
+                  <form onSubmit="alert('Message sent! (This is just a demo)'); return false;">
+                    <div class="mb-4">
+                      <label class="block font-comic text-cyber-blue mb-1">Your Name:</label>
+                      <input type="text" class="w-full bg-black border-2 border-hot-pink p-2 text-white font-comic" placeholder="Enter your name" />
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label class="block font-comic text-cyber-blue mb-1">Your Email:</label>
+                      <input type="email" class="w-full bg-black border-2 border-hot-pink p-2 text-white font-comic" placeholder="Enter your email" />
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label class="block font-comic text-cyber-blue mb-1">Your Message:</label>
+                      <textarea class="w-full bg-black border-2 border-hot-pink p-2 text-white font-comic h-32" placeholder="What would you like to say?"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                      <button type="submit" class="bg-neon-green text-black px-6 py-2 rounded-full font-pixel-body hover:bg-bright-yellow">
+                        Send Message! ✉
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              
+              <div class="md:w-1/2">
+                <div class="glitter-border p-4 h-full">
+                  <h3 class="font-pixel-body text-xl text-hot-pink mb-3">✧ Find me online! ✧</h3>
+                  
+                  <div class="space-y-4">
+                    <div class="flex items-center">
+                      <svg 
+                        class="mr-3" 
+                        width="40" 
+                        height="40" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5"/>
+                      </svg>
+                      <a href="mailto:kawaii@example.com" class="font-comic text-cyber-blue hover:text-bright-yellow">purplepop.nix@protnmail.com</a>
+                    </div>
+                    
+                    <div class="flex items-center">
+                      <svg 
+                        class="mr-3" 
+                        width="40" 
+                        height="40" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="12" r="8" fill="#CC99FF" stroke="#FFFFFF" stroke-width="0.5"/>
+                        <circle cx="12" cy="8" r="2" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#CC99FF" stroke="#FFFFFF" stroke-width="0.5" transform="scale(0.45) translate(13, 13)"/>
+                      </svg>
+                      <a href="#" class="font-comic text-cyber-blue hover:text-bright-yellow">@polarbearstan</a>
+                    </div>
+                    
+                    <div class="flex items-center">
+                      <svg 
+                        class="mr-3" 
+                        width="40" 
+                        height="40" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" fill="#33CCFF" stroke="#FFFFFF" stroke-width="0.5"/>
+                        <path d="M9 16V8l8 4z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5"/>
+                      </svg>
+                      <a href="#" class="font-comic text-cyber-blue hover:text-bright-yellow">@purplepop.nix</a>
+                    </div>
+                    
+                    <div class="flex items-center">
+                      <svg 
+                        class="mr-3" 
+                        width="40" 
+                        height="40" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5"/>
+                      </svg>
+                      <a href="#" class="font-comic text-cyber-blue hover:text-bright-yellow">github.com/polarbearstan</a>
+                    </div>
+                  </div>
+                  
+                  <svg 
+                    class="mt-6 mx-auto animate-float" 
+                    width="120" 
+                    height="120" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" 
+                      fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5" transform="rotate(45 12 12)"/>
+                    <circle cx="12" cy="12" r="4" fill="#CC99FF" stroke="#FFFFFF" stroke-width="0.5"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="bg-hot-pink text-black py-4">
+        <div class="container mx-auto px-4">
+          <div class="marquee bg-hot-pink border-y-4 border-black my-4">
+            <div class="marquee-content font-pixel-body text-xl text-black">
+              ★☆★ Thank you for visiting my cute portfolio website! Made with lots of love and glitter! ★☆★ Come back soon! ★☆★
+            </div>
+          </div>
+          
+          <div class="flex justify-center items-center mt-4 gap-3">
+            <!-- Y2K aesthetic elements -->
+            <svg 
+              width="40" 
+              height="40" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FF66B2" stroke="#000000" stroke-width="0.5"/>
+            </svg>
+            
+            <svg 
+              width="40" 
+              height="40" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#66FF99" stroke="#000000" stroke-width="0.5"/>
+            </svg>
+            
+            <svg 
+              width="40" 
+              height="40" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="10" fill="#33CCFF" stroke="#000000" stroke-width="0.5"/>
+              <path d="M12 7L14.5 12L12 17L9.5 12L12 7Z" fill="#FFFFFF" stroke="#000000" stroke-width="0.5"/>
+            </svg>
+          </div>
+          
+          <p class="text-center mt-3 font-comic">
+            © 2023 My Super Cute Portfolio | Last updated with cuteness on May 21, 2025
+          </p>
+          
+          <p class="text-center text-xs mt-1 font-pixel-body">
+            Best viewed with Internet Explorer 6.0 or Netscape Navigator (jk lol)
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Secret dialog -->
+    <div id="secretDialog" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 50; display: flex; align-items: center; justify-content: center;">
+      <div class="bg-lavender p-1 rounded-lg max-w-md">
+        <div class="bg-black p-6 rounded-lg text-center">
+          <h3 class="font-pixel text-xl text-bright-yellow mb-3">✧ You found a secret! ✧</h3>
+          
+          <svg 
+            class="mx-auto mb-4 animate-float" 
+            width="150" 
+            height="150" 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="4" y="4" width="16" height="16" rx="2" fill="#CC99FF" stroke="#FFFFFF" stroke-width="0.5"/>
+            <circle cx="12" cy="12" r="4" fill="#FF66B2" stroke="#FFFFFF" stroke-width="0.5"/>
+            <path d="M12 6L14 10H10L12 6Z" fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5"/>
+            <path d="M12 18L14 14H10L12 18Z" fill="#66FF99" stroke="#FFFFFF" stroke-width="0.5"/>
+            <path d="M6 12L10 14V10L6 12Z" fill="#33CCFF" stroke="#FFFFFF" stroke-width="0.5"/>
+            <path d="M18 12L14 14V10L18 12Z" fill="#33CCFF" stroke="#FFFFFF" stroke-width="0.5"/>
+          </svg>
+          
+          <p class="font-comic text-hot-pink mb-3">
+            You've discovered my secret treasure chest! Here's a special pixel art friend just for you!
+          </p>
+          
+          <button 
+            onclick="document.getElementById('secretDialog').style.display = 'none';"
+            class="bg-cyber-blue text-black px-4 py-2 rounded-full font-pixel-body hover:bg-neon-green"
+          >
+            Close Secret ✨
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Sparkle cursor effect
+      document.addEventListener('DOMContentLoaded', function() {
+        const sparkleContainer = document.getElementById('sparkleContainer');
+        const colors = ['#FF66B2', '#33CCFF', '#66FF99', '#CC99FF', '#FFFF66'];
+        let sparkleCount = 0;
+        const MAX_SPARKLES = 15;
+        
+        function createSparkle(e) {
+          if (sparkleCount > MAX_SPARKLES) {
+            const firstSparkle = sparkleContainer.querySelector('.sparkle-trail');
+            if (firstSparkle) {
+              sparkleContainer.removeChild(firstSparkle);
+              sparkleCount--;
+            }
+          }
+          
+          const sparkle = document.createElement('div');
+          sparkle.className = 'sparkle-trail';
+          sparkle.style.left = (e.clientX - 10) + 'px';
+          sparkle.style.top = (e.clientY - 10) + 'px';
+          sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          sparkle.style.opacity = '0.7';
+          sparkle.innerHTML = '✨';
+          sparkleContainer.appendChild(sparkle);
+          sparkleCount++;
+          
+          setTimeout(() => {
+            sparkle.style.opacity = '0';
+            setTimeout(() => {
+              if (sparkle.parentNode === sparkleContainer) {
+                sparkleContainer.removeChild(sparkle);
+              }
+            }, 200);
+          }, 500);
+          
+          return sparkle;
+        }
+        
+        document.addEventListener('mousemove', createSparkle);
+        
+        // Secret button
+        document.getElementById('secret-link').addEventListener('click', function(e) {
+          e.preventDefault();
+          document.getElementById('secretDialog').style.display = 'flex';
+        });
+
+        // Konami code easter egg
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiPosition = 0;
+        
+        document.addEventListener('keydown', function(e) {
+          if (e.key === konamiCode[konamiPosition]) {
+            const newPosition = konamiPosition + 1;
+            konamiPosition = newPosition;
+            
+            if (newPosition === konamiCode.length) {
+              document.body.style.backgroundImage = "url('data:image/svg+xml;charset=utf8,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"%3E%3Cpath d=\"M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z\" fill=\"%23FF66B2\"%2F%3E%3C%2Fsvg%3E')";
+              document.body.style.backgroundSize = "100px 100px";
+              
+              setTimeout(() => {
+                document.body.style.backgroundImage = "none";
+                document.body.style.backgroundColor = "black";
+                konamiPosition = 0;
+              }, 3000);
+            }
+          } else {
+            konamiPosition = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
